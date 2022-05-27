@@ -36,62 +36,6 @@ export default class RibbonMenu {
       </div>
       `
     );
-
-    /*
-        let divRibbon = document.createElement('div');
-        divRibbon.className = 'ribbon';
-    
-        let ribbonArrowLeft = document.createElement('button');
-        ribbonArrowLeft.classList.add('ribbon__arrow');
-        ribbonArrowLeft.classList.add('ribbon__arrow_left');
-    
-        let imgArrowLeft = document.createElement('img');
-        imgArrowLeft.src = '/assets/images/icons/angle-icon.svg';
-        imgArrowLeft.setAttribute('alt', 'icon');
-    
-        ribbonArrowLeft.append(imgArrowLeft);
-    
-        let ribbonArrowRight = document.createElement('button');
-        ribbonArrowRight.classList.add('ribbon__arrow');
-        ribbonArrowRight.classList.add('ribbon__arrow_right');
-        ribbonArrowRight.classList.add('ribbon__arrow_visible');
-    
-        let imgArrowRight = document.createElement('img');
-        imgArrowRight.src = '/assets/images/icons/angle-icon.svg';
-        imgArrowRight.setAttribute('alt', 'icon');
-    
-        ribbonArrowRight.append(imgArrowRight);
-    
-    
-        divRibbon.append(ribbonArrowLeft);
-        divRibbon.append(this.createNavRibbonInner());
-        divRibbon.append(ribbonArrowRight);
-    
-        return divRibbon;
-      */
-  }
-  createNavRibbonInner() {
-    let navRibbonInner = document.createElement('nav');
-    navRibbonInner.className = 'ribbon__inner';
-
-    for (let i = 0; i < this.categories.length; i++) {
-      let a = document.createElement('a');
-      a.classList.add('ribbon__item');
-      a.href = '#';
-      a.innerHTML = this.categories[i].name;
-
-      if (i === 0) {
-        a.classList.add('ribbon__item_active');
-        a.dataset.id = '';
-      }
-      else {
-        a.dataset.id = this.categories[i].id;
-      }
-
-      navRibbonInner.append(a);
-    }
-
-    return navRibbonInner;
   }
 
   createScrollEvents() {
