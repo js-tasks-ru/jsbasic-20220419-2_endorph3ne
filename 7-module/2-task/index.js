@@ -7,49 +7,27 @@ export default class Modal {
   }
 
   createModal() {
-    let divModal = document.createElement('div');
-    divModal.className = 'modal';
+    return createElement(
+      `
+      <div class="modal">
+        <div class="modal__overlay"></div>
 
-    let divModalOverlay = document.createElement('div');
-    divModalOverlay.className = 'modal__overlay';
+        <div class="modal__inner">
+          <div class="modal__header">
+            <button type="button" class="modal__close">
+              <img src="/assets/images/icons/cross-icon.svg" alt="close-icon" />
+            </button>
 
-    divModal.append(divModalOverlay);
-    divModal.append(this.createModalInner());
+            <h3 class="modal__title">
+            </h3>
+          </div>
 
-    return divModal;
-  }
-  createModalInner() {
-    let divModalInner = document.createElement('div');
-    divModalInner.className = 'modal__inner';
-
-    let divModalBody = document.createElement('div');
-    divModalBody.className = 'modal__body';
-
-    divModalInner.append(this.createModalHeader());
-    divModalInner.append(divModalBody);
-
-    return divModalInner;
-  }
-  createModalHeader() {
-    let divModalHeader = document.createElement('div');
-    divModalHeader.className = 'modal__header';
-
-    let buttonModalClose = document.createElement('button');
-    buttonModalClose.className = 'modal__close';
-
-    let img = document.createElement('img');
-    img.src = '/assets/images/icons/cross-icon.svg';
-    img.setAttribute('alt', 'close-icon');
-
-    buttonModalClose.append(img);
-
-    let h3ModalTitle = document.createElement('h3');
-    h3ModalTitle.className = 'modal__title';
-
-    divModalHeader.append(buttonModalClose);
-    divModalHeader.append(h3ModalTitle);
-
-    return divModalHeader;
+          <div class="modal__body">
+          </div>
+        </div>
+      </div>
+      `
+    );
   }
 
   open() {
